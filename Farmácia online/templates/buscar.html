@@ -1,0 +1,69 @@
+<form action="{{ url_for('buscar') }}" method="get">
+    <input type="text" name="query" id="query" placeholder="Buscar medicamentos">
+    <input type="number" name="preco_min" placeholder="Preço mínimo">
+    <input type="number" name="preco_max" placeholder="Preço máximo">
+    <select name="categoria">
+        <option value="">Todas as categorias</option>
+        <option value="analgésico">Analgésico</option>
+        <option value="antibiótico">Antibiótico</option>
+        <!-- Adicione mais categorias conforme necessário -->
+    </select>
+    <button type="submit">Buscar</button>
+</form>
+<ul id="sugestoes-lista"></ul>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#query').on('input', function() {
+            var query = $(this).val();
+            $.getJSON("{{ url_for('sugestoes') }}", { query: query }, function(data) {
+                var sugestoesLista = $('#sugestoes-lista');
+                sugestoesLista.empty();
+                data.forEach(function(sugestao) {
+                    sugestoesLista.append('<li>' + sugestao + '</li>');
+                });
+            });
+        });
+    });
+</script>
+
+{% for resultado in resultados %}
+    <div>
+        <h3>{{ resultado.nome }}</h3>
+        <p>Preço: {{ resultado.preco }}</p>
+        <h4>Avaliações:</h4>
+        <ul>
+            {% for avaliacao in resultado.avaliacoes %}
+                <li>{{ avaliacao.usuario }}: {{ avaliacao.avaliacao }}</li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('avaliar', nome=resultado.nome) }}" method="post">
+            <input type="text" name="avaliacao" placeholder="Deixe sua avaliação">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+{% endfor %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Medicamentos - Farmácia Online Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   
+    </form>
+
+    <ul class="resultados">
+        {% for resultado in resultados %}
+        <li>
+            <h3>{{ resultado.nome }}</h3>
+            <p>Preço: {{ resultado.preco }}</p>
+            <a href="{{ url_for('add_to_cart', nome=resultado['nome']) }}" class="btn-add-cart">Adicionar ao Carrinho</a>
+            <a href="{{ url_for('remove_from_cart', nome=resultado['nome']) }}" class="btn-remove-cart">Remover do Carrinho</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

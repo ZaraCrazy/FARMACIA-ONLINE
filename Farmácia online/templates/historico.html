@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Pedidos - Farmácia Online Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Histórico de Pedidos</h1>
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                <strong>Data:</strong> {{ pedido['data'] }}<br>
+                <strong>Itens:</strong>
+                <ul>
+                    {% for item in pedido['itens'] %}
+                        <li>{{ item['nome'] }} - {{ item['preco'] }}</li>
+                    {% endfor %}
+                </ul>
+                <strong>Total:</strong> {{ pedido['total'] }} Kz
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Voltar para Home</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Edição do Aplicativo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Área de Edição</h1>
+    <form action="{{ url_for('editar') }}" method="post">
+        <label for="medicamento">Nome do Medicamento:</label>
+        <input type="text" id="medicamento" name="medicamento" required>
+        
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco" required>
+        
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{{ url_for('home') }}">Voltar para a Home</a>
+</body>
+</html>

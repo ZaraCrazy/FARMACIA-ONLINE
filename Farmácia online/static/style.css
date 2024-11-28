@@ -1,0 +1,403 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end; /* Alinhando à direita */
+    padding: 20px;
+    background-color: #4CAF50;
+    text-align: right; /* Garantindo alinhamento à direita */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px; /* Diminui o tamanho do logotipo */
+    height: 80px; /* Certifique-se de que a altura seja igual à largura */
+    margin-left: 20px; /* Ajuste a margem conforme necessário */
+    border-radius: 50%; /* Torna o logotipo circular */
+    border: 2px solid #fff; /* Adiciona uma borda branca ao logotipo */
+}
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* Alinhando o texto à direita */
+}
+
+.titulo-principal {
+    font-size: 2em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.imagem-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.imagem-fundo {
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
+}
+
+.medicamentos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adiciona mais espaço entre os medicamentos */
+}
+.medicamento {
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.medicamento h3, .medicamento p {
+    color: #000; /* Muda a cor do texto para preto */
+}
+
+.medicamento img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+a:hover {
+    background-color: #45a049;
+}
+
+.btn-add-cart {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-add-cart:hover {
+    background-color: #45a049;
+}
+
+.whatsapp {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+.nav-icons {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 20px; /* Espaço entre os links */
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.nav-icons a i {
+    margin-right: 10px;
+}
+
+.nav-icons a.btn-login {
+    color: blue; /* Cor das letras do botão de login */
+    border: 2px solid #fff; /* Adiciona uma borda branca ao botão de login */
+}
+
+.nav-icons a.btn-login:hover {
+    background-color: #f0f0f0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* Fundo verde claro */
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: 2px solid #ffffff; /* Bordas brancas */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+.resultados {
+    list-style: none;
+    padding: 0;
+}
+
+.resultados li {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #4CAF50; /* Bordas verdes */
+    border-radius: 5px;
+}
+
+.resultados h3, .resultados p {
+    color: #333; /* Cor do texto */
+    margin: 0;
+    padding: 5px;
+}
+
+.resultados p {
+    margin-top: 5px;
+}
+
+.carrinho {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.carrinho li {
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #4CAF50; /* Bordas verdes */
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+}
+
+.carrinho h3, .carrinho p {
+    color: #333; /* Cor do texto */
+    margin: 0;
+    padding: 5px;
+}
+
+.carrinho p {
+    margin-top: 5px;
+}
+
+.btn-remove-cart, .btn-checkout {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn-remove-cart:hover, .btn-checkout:hover {
+    background-color: #45a049;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: 2px solid #ffffff; /* Bordas brancas */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita que a tela se mova */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: #4CAF50;
+    text-align: right;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.titulo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.titulo-principal {
+    font-size: 2em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.subtitulo {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin: 0;
+}
+.imagem-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+}
+
+.imagem-fundo {
+    width: 100%;
+    height: auto;
+    filter: brightness(70%);
+}
+
+.medicamentos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.whatsapp {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+h1 {
+    color: #4CAF50;
+    text-align: center;
+    padding: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}

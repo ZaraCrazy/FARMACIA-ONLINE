@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil - Farmácia Online Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bem-vindo, {{ name }}</h1>
+    <p>Pontos de Fidelidade: {{ pontos }}</p>
+    <a href="/logout">Logout</a>
+    <a href="/">Voltar para Home</a>
+</body>
+</html>
+

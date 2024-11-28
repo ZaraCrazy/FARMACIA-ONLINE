@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmácia Online Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Incluindo Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <!-- Adicionando Logotipo e Título à Direita -->
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logotipo" class="logo">
+            <div class="titulo-container">
+                <h1 class="titulo-principal">Farmácia Online</h1>
+                <h2 class="subtitulo">Isaías Muchamuene</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ícones no canto superior esquerdo -->
+    <div class="nav-icons">
+        <a href="/buscar">
+            <i class="fas fa-search"></i> Procurar Medicamentos
+        </a>
+        <a href="/carrinho">
+            <i class="fas fa-shopping-cart"></i> Ver Carrinho
+        </a>
+        <a href="/login" class="btn-login">Login</a>
+    </div>
+
+    <!-- Adicionando Imagem -->
+    <div class="imagem-container">
+        <img src="{{ url_for('static', filename='home_image.jpg') }}" alt="Imagem da Farmácia" class="imagem-fundo">
+        <!-- Listagem de Medicamentos sobre a Imagem -->
+        <div class="medicamentos">
+            {% for medicamento in medicamentos %}
+            <div class="medicamento">
+                <img src="{{ url_for('static', filename=medicamento['imagem']) }}" alt="{{ medicamento['nome'] }}">
+                <h3>{{ medicamento['nome'] }}</h3>
+                <p>Preço: {{ medicamento['preco'] }}</p>
+                <a href="{{ url_for('add_to_cart', nome=medicamento['nome']) }}" class="btn-add-cart">Adicionar ao Carrinho</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Botão do WhatsApp -->
+    <div class="whatsapp">
+        <a href="https://wa.me/948275407" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+</body>
+</html>

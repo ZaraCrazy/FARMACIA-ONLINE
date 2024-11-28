@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar - Farmácia Online Isaías Muchamuene</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Registrar</h1>
+    <form action="{{ url_for('register') }}" method="post">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Registrar</button>
+    </form>
+    <p>Já tem uma conta? <a href="{{ url_for('login') }}">Faça login aqui</a></p>
+    <a href="/">Voltar para Home</a>
+</body>
+</html>
